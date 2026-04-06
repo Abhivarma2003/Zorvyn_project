@@ -157,7 +157,7 @@ const InsightsPage = () => {
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--border)" opacity={0.4} />
                   <XAxis dataKey="month" axisLine={false} tickLine={false} tickMargin={8} tick={{ fill: 'var(--text-muted)' }} />
                   <YAxis tickCount={4} axisLine={false} tickLine={false} tickMargin={8} tick={{ fill: 'var(--text-muted)' }} />
-                  <Tooltip formatter={(value: number) => formatCurrency(value)} labelFormatter={() => 'Month'} />
+                  <Tooltip formatter={(value: any) => formatCurrency(Number(value || 0))} labelFormatter={() => 'Month'} />
                   <Line type="monotone" dataKey="value" stroke="var(--accent)" strokeWidth={3} dot={{ fill: 'var(--accent)', strokeWidth: 2 }} activeDot={{ r: 6 }} />
                 </LineChart>
               </ResponsiveContainer>
